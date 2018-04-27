@@ -1,0 +1,41 @@
+---- bufchain_add Matches (27 in 16 files) ----
+Be_misc.c:        bufchain_add(buf, data + pos, nlpos - (data + pos));
+Be_misc.c:    bufchain_add(buf, data + pos, len - pos);
+Logging.c:	bufchain_add(&ctx->queue, data, len);
+Misc.c:void bufchain_add(bufchain *ch, const void *data, int len)
+Misc.c://AfxMessageBox("Misc bufchain_add");
+Misc.h:void bufchain_add(bufchain *ch, const void *data, int len);
+Proxy.c:	bufchain_add(&ps->pending_output_data, data, len);
+Proxy.c:	bufchain_add(&ps->pending_oob_output_data, data, len);
+Proxy.c:	bufchain_add(&ps->pending_input_data, data, len);
+Sel.c (contrib\cygtermd):static void bufchain_add(bufchain *ch, const void *data, size_t len)
+Sel.c (contrib\cygtermd):AfxMessageBox("Sel bufchain_add");
+Sel.c (contrib\cygtermd):    bufchain_add(&wfd->buf, data, len);
+Ssh.c:    bufchain_add(&ssh->queued_incoming_data, *data, *datalen);
+Ssh.c:    bufchain_add(&c->u.a.inbuffer, data, length);
+Ssh.c:	bufchain_add(&c->v.v2.outbuffer, buf, len);
+Ssh.c:	    bufchain_add(&ssh->banner, banner, size);
+Terminal.c:	    bufchain_add(&term->printer_buf, &c, 1);
+Terminal.c:    bufchain_add(&term->inbuf, data, len);
+Uxnet.c (unix):    bufchain_add(&s->output_data, buf, len);
+Uxplink.c (unix):	bufchain_add(&stderr_data, data, len);
+Uxplink.c (unix):	bufchain_add(&stdout_data, data, len);
+Uxproxy.c (unix):    bufchain_add(&ps->pending_output_data, data, len);
+Uxpty.c (unix):    bufchain_add(&pty->output_data, buf, len);
+Uxser.c (unix):    bufchain_add(&serial->output_data, buf, len);
+Winhandl.c (windows):    bufchain_add(&h->u.o.queued_data, data, len);
+Winhsock.c (windows):            bufchain_add(&ps->inputdata, data, len);
+Winnet.c (windows):    bufchain_add(&s->output_data, buf, len);
+---- print_state Matches (12 in 2 files) ----
+Terminal.c:		    term->print_state = 1;
+Terminal.c:		    term->print_state = 2;
+Terminal.c:		else if (c == '[' && term->print_state == 1)
+Terminal.c:		    term->print_state = 2;
+Terminal.c:		else if (c == '4' && term->print_state == 2)
+Terminal.c:		    term->print_state = 3;
+Terminal.c:		else if (c == 'i' && term->print_state == 3)
+Terminal.c:		    term->print_state = 4;
+Terminal.c:		    term->print_state = 0;
+Terminal.c:		if (term->print_state == 4) {
+Terminal.c:				term->print_state = 0;
+Terminal.h:    int print_state;		       /* state of print-end-sequence scan */
