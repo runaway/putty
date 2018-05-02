@@ -677,7 +677,7 @@ void bufchain_add(bufchain *ch, const void *data, int len)
 
     while (len > 0) 
 	{
-#if 0
+#if 1
 	if (ch->tail && ch->tail->bufend < ch->tail->bufmax) 
 	{
 	    int copylen = min(len, ch->tail->bufmax - ch->tail->bufend);

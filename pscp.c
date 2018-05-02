@@ -27,6 +27,9 @@
 #include "storage.h"
 #include "int64.h"
 
+#include "extra.h"
+
+
 static int list = 0;
 static int verbose = 0;
 static int recursive = 0;
@@ -53,6 +56,8 @@ static void rsource(const char *src);
 static void sink(const char *targ, const char *src);
 
 const char *const appname = "PSCP";
+
+extern char* RemoveChinese(char* szSrc);
 
 /*
  * The maximum amount of queued data we accept before we stop and
@@ -827,16 +832,22 @@ int scp_send_filetimes(unsigned long mtime, unsigned long atime)
     }
 }
 
+
 int scp_send_filename(const char *name, uint64 size, int permissions)
 {
+	char szTemp[255];
     if (using_sftp) {
 	char *fullname;
 	struct sftp_packet *pktin;
 	struct sftp_request *req;
         struct fxp_attrs attrs;
 
+	//strcpy(szTemp, RemoveChinese(name));
+	RemoveChinese(name, szTemp);
+	printf("szTemp = %s, ", szTemp);
+
 	if (scp_sftp_targetisdir) {
-	    fullname = dupcat(scp_sftp_remotepath, "/", name, NULL);
+	    fullname = dupcat(scp_sftp_remotepath, "/", szTemp, NULL); // name
 	} else {
 	    fullname = dupstr(scp_sftp_remotepath);
 	}
@@ -851,7 +862,7 @@ int scp_send_filename(const char *name, uint64 size, int permissions)
 	scp_sftp_filehandle = fxp_open_recv(pktin, req);
 
 	if (!scp_sftp_filehandle) {
-	    tell_user(stderr, "pscp: unable to open %s: %s",
+	    tell_user(stderr, "pscp: unable to open remote %s: %s",
 		      fullname, fxp_error());
             sfree(fullname);
 	    errs++;

@@ -1,0 +1,7 @@
+
+
+
+
+char* RemoveChinese(char* szSrc);
+
+
