@@ -1,0 +1,16 @@
+﻿  misc.c
+e:\temp\putty-src\misc.c(264): warning C4267: “函数”: 从“size_t”转换到“int”，可能丢失数据
+e:\temp\putty-src\misc.c(291): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+e:\temp\putty-src\misc.c(305): warning C4267: “=”: 从“size_t”转换到“int”，可能丢失数据
+e:\temp\putty-src\misc.c(311): warning C4267: “+=”: 从“size_t”转换到“int”，可能丢失数据
+e:\temp\putty-src\misc.c(500): warning C4267: “+=”: 从“size_t”转换到“int”，可能丢失数据
+e:\temp\putty-src\misc.c(519): warning C4267: “+=”: 从“size_t”转换到“int”，可能丢失数据
+e:\temp\putty-src\misc.c(543): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+e:\temp\putty-src\misc.c(683): warning C4244: “初始化”: 从“__int64”转换到“int”，可能丢失数据
+e:\temp\putty-src\misc.c(766): warning C4244: “=”: 从“__int64”转换到“int”，可能丢失数据
+e:\temp\putty-src\misc.c(781): warning C4244: “=”: 从“__int64”转换到“int”，可能丢失数据
+e:\temp\putty-src\misc.c(798): warning C4244: “=”: 从“__int64”转换到“int”，可能丢失数据
+e:\temp\putty-src\misc.c(1170): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+e:\temp\putty-src\misc.c(1182): warning C4018: “<”: 有符号/无符号不匹配
+C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets(1202,5): warning MSB8012: TargetPath(E:\Temp\putty-src\windows\VS2012\x64\Release\pageant.exe) 与 Linker 的 OutputFile 属性值(E:\Temp\putty-src\windows\VS2012\pageant\Release\pageant.exe)不匹配。这可能导致项目生成不正确。若要更正此问题，请确保 $(OutDir)、$(TargetName) 和 $(TargetExt) 属性值与 %(Link.OutputFile) 中指定的值匹配。
+  pageant.vcxproj -> E:\Temp\putty-src\windows\VS2012\x64\Release\pageant.exe
